@@ -22,7 +22,9 @@ namespace DonationAPP.Controllers.Instituicoes.Comandos.Cadastrar
         [HttpPost]
         public void Post([FromBody] RequisicaoDTO requisicaoDTO)
         {
-            _casoDeUso.Executar();
+            var dadosDeEntrada = new DadosDeEntrada(requisicaoDTO.Id, requisicaoDTO.Nome, requisicaoDTO.CNPJ);
+
+            _casoDeUso.Executar(dadosDeEntrada);
         }
     }
 }

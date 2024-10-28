@@ -5,9 +5,15 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Cadastrar
 {
     public sealed class CasoDeUso
     {
-        public void Executar()
+        public void Executar(DadosDeEntrada dadosDeEntrada)
         {
-            var instituicao = InstituicaoFabrica.Criar(Guid.NewGuid(), "empresa", "123", 1);
+            try
+            {
+                var instituicao = InstituicaoFabrica.Criar(dadosDeEntrada.Id, dadosDeEntrada.Nome, dadosDeEntrada.CNPJ);
+            }
+            catch
+            {
+            }
         }
     }
 }

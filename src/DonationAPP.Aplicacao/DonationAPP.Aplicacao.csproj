@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CasosDeUso\Instituicoes\Comandos\Cadastrar\CasoDeUso.cs" />
+    <Compile Include="CasosDeUso\Instituicoes\Comandos\Cadastrar\DadosDeEntrada.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
