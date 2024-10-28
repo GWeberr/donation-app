@@ -1,6 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\DonationAPP",
+    "\\src\\DonationAPP.Aplicacao",
+    "\\src\\DonationAPP.Aplicacao\\CasosDeUso",
+    "\\src\\DonationAPP.Aplicacao\\CasosDeUso\\Instituicoes",
+    "\\src\\DonationAPP.Aplicacao\\CasosDeUso\\Instituicoes\\Comandos",
+    "\\src\\DonationAPP.Aplicacao\\CasosDeUso\\Instituicoes\\Comandos\\Cadastrar"
   ],
+  "SelectedNode": "\\src\\DonationAPP.Aplicacao\\CasosDeUso\\Instituicoes\\Comandos\\Cadastrar\\CasoDeUso.cs",
   "PreviewInSolutionExplorer": false
 }

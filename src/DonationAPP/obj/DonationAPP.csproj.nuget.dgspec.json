@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gabri\\source\\repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.csproj": {}
+    "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gabri\\source\\repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.csproj": {
+    "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabri\\source\\repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.csproj",
+        "projectUniqueName": "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.csproj",
         "projectName": "DonationAPP",
-        "projectPath": "C:\\Users\\gabri\\source\\repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.csproj",
+        "projectPath": "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.csproj",
         "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP\\obj\\",
         "projectStyle": "PackageReference",

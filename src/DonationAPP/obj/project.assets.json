@@ -88,6 +88,27 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "DonationAPP.Aplicacao/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "DonationAPP.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DonationAPP.Aplicacao.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DonationAPP.Aplicacao.dll": {}
+        }
+      },
+      "DonationAPP.Dominio/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DonationAPP.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DonationAPP.Dominio.dll": {}
+        }
       }
     }
   },
@@ -429,10 +450,21 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "DonationAPP.Aplicacao/1.0.0": {
+      "type": "project",
+      "path": "../DonationAPP.Aplicacao/DonationAPP.Aplicacao.csproj",
+      "msbuildProject": "../DonationAPP.Aplicacao/DonationAPP.Aplicacao.csproj"
+    },
+    "DonationAPP.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../DonationAPP.Dominio/DonationAPP.Dominio.csproj",
+      "msbuildProject": "../DonationAPP.Dominio/DonationAPP.Dominio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "DonationAPP.Aplicacao >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -442,9 +474,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.csproj",
-      "projectName": "DonationAPP",
-      "projectPath": "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.csproj",
+      "projectUniqueName": "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.WebAPI.csproj",
+      "projectName": "DonationAPP.WebAPI",
+      "projectPath": "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP\\DonationAPP.WebAPI.csproj",
       "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP\\obj\\",
       "projectStyle": "PackageReference",
@@ -462,7 +494,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP.Aplicacao\\DonationAPP.Aplicacao.csproj": {
+              "projectPath": "C:\\Users\\gabri\\Source\\Repos\\GWeberr\\donation-app\\src\\DonationAPP.Aplicacao\\DonationAPP.Aplicacao.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
