@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationAPP.Dominio", "Dona
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationAPP.Aplicacao", "DonationAPP.Aplicacao\DonationAPP.Aplicacao.csproj", "{FCE9062D-27D3-4FAF-B9E4-DACF4F3CC1A8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{AF78FE3D-A3BE-4E3E-9AC4-1E95D4BECD51}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - assets", "0 - assets", "{AF78FE3D-A3BE-4E3E-9AC4-1E95D4BECD51}"
 	ProjectSection(SolutionItems) = preProject
-		..\gitignore = ..\gitignore
+		..\.gitignore = ..\.gitignore
 	EndProjectSection
 EndProject
 Global
