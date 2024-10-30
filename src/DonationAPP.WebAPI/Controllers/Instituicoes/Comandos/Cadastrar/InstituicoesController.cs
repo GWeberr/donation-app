@@ -5,8 +5,7 @@ namespace DonationAPP.Controllers.Instituicoes.Comandos.Cadastrar
 {
     [ApiController]
     [Route("[controller]/")]
-    public class InstituicoesController : 
-        ControllerBase
+    public class InstituicoesController : ControllerBase
     {
         private readonly CasoDeUso _casoDeUso;
         private readonly ILogger<InstituicoesController> _logger;
@@ -20,11 +19,14 @@ namespace DonationAPP.Controllers.Instituicoes.Comandos.Cadastrar
         }
 
         [HttpPost]
-        public void Post([FromBody] RequisicaoDTO requisicaoDTO)
+        public IActionResult Post([FromBody] RequisicaoDTO requisicaoDTO)
         {
             var dadosDeEntrada = new DadosDeEntrada(requisicaoDTO.Id, requisicaoDTO.Nome, requisicaoDTO.CNPJ);
 
             _casoDeUso.Executar(dadosDeEntrada);
+      
+            return CreatedAtAction(nameof(Post), new { id = requisicaoDTO.Id }, requisicaoDTO);
         }
+
     }
 }
