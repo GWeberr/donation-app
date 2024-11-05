@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DonationAPP.Dominio.Modelos.Doacao
+namespace DonationAPP.Dominio.Modelos.Doacoes
 {
     public sealed class Doacao
     {
