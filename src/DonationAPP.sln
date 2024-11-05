@@ -5,14 +5,15 @@ VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DonationAPP.WebAPI", "DonationAPP.WebAPI\DonationAPP.WebAPI.csproj", "{E1AB2C26-52AE-4C54-B754-CBD70266EC1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationAPP.Dominio", "DonationAPP.Dominio\DonationAPP.Dominio.csproj", "{0EFD7E3F-0058-4CAE-8D7B-A0122E3EBB19}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationAPP.Aplicacao", "DonationAPP.Aplicacao\DonationAPP.Aplicacao.csproj", "{FCE9062D-27D3-4FAF-B9E4-DACF4F3CC1A8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - assets", "0 - assets", "{AF78FE3D-A3BE-4E3E-9AC4-1E95D4BECD51}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
+		..\README.md = ..\README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationAPP.Dominio", "DonationAPP.Dominio\DonationAPP.Dominio.csproj", "{4591E9D1-8D40-47B4-A456-BA37D20652AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationAPP.Aplicacao", "DonationAPP.Aplicacao\DonationAPP.Aplicacao.csproj", "{7F17E502-7874-4C60-A388-46FB07B35786}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,14 +25,14 @@ Global
 		{E1AB2C26-52AE-4C54-B754-CBD70266EC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1AB2C26-52AE-4C54-B754-CBD70266EC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1AB2C26-52AE-4C54-B754-CBD70266EC1B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0EFD7E3F-0058-4CAE-8D7B-A0122E3EBB19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0EFD7E3F-0058-4CAE-8D7B-A0122E3EBB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0EFD7E3F-0058-4CAE-8D7B-A0122E3EBB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0EFD7E3F-0058-4CAE-8D7B-A0122E3EBB19}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FCE9062D-27D3-4FAF-B9E4-DACF4F3CC1A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCE9062D-27D3-4FAF-B9E4-DACF4F3CC1A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCE9062D-27D3-4FAF-B9E4-DACF4F3CC1A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCE9062D-27D3-4FAF-B9E4-DACF4F3CC1A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4591E9D1-8D40-47B4-A456-BA37D20652AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4591E9D1-8D40-47B4-A456-BA37D20652AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4591E9D1-8D40-47B4-A456-BA37D20652AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4591E9D1-8D40-47B4-A456-BA37D20652AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F17E502-7874-4C60-A388-46FB07B35786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F17E502-7874-4C60-A388-46FB07B35786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F17E502-7874-4C60-A388-46FB07B35786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F17E502-7874-4C60-A388-46FB07B35786}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
