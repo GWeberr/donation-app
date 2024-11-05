@@ -2,9 +2,9 @@
 {
     public static class DoacaoFabrica
     {
-        public static Doacao Criar(Guid id, Guid instituicaoId, decimal valor)
+        public static Doacao Criar(Guid id, Guid instituicaoId, Guid tipoDoacaoId, decimal valor)
         {
-            return new Doacao(id, instituicaoId, valor);
+            return new Doacao(id, instituicaoId, tipoDoacaoId, valor);
         }
     }
 }
