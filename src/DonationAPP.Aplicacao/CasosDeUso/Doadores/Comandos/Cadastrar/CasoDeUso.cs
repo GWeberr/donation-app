@@ -1,4 +1,4 @@
-using DonationAPP.Dominio.Modelos.Instituicoes;
+using DonationAPP.Dominio.Modelos.Doadores;
 using System;
 
 namespace DonationAPP.Aplicacao.CasosDeUso.Doadores.Comandos.Cadastrar
@@ -9,7 +9,7 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Doadores.Comandos.Cadastrar
         {
             try
             {
-                var doador = DoadorFabrica.Criar(dadosDeEntrada.Id, dadosDeEntrada.Nome, dadosDeEntrada.Email);
+                var doador = DoadorFabrica.Criar(dadosDeEntrada.Id, dadosDeEntrada.Nome, dadosDeEntrada.Email, dadosDeEntrada.QuantidadeDoada);
             }
             catch
             {

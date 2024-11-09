@@ -21,7 +21,7 @@ namespace DonationAPP.Controllers.Doadores.Comandos.Cadastrar
         [HttpPost]
         public IActionResult Post([FromBody] RequisicaoDTO requisicaoDTO)
         {
-            var dadosDeEntrada = new DadosDeEntrada(requisicaoDTO.Id, requisicaoDTO.Nome, requisicaoDTO.Email);
+            var dadosDeEntrada = new DadosDeEntrada(requisicaoDTO.Id, requisicaoDTO.Nome, requisicaoDTO.Email, requisicaoDTO.QuantidadeDoada);
 
             _casoDeUso.Executar(dadosDeEntrada);
 

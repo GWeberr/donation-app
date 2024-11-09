@@ -7,7 +7,7 @@
         public string Email { get; private set; }
         public int QuantidadeDoada { get; private set; }
 
-        public Doador(Guid id, string nome, string email)
+        public Doador(Guid id, string nome, string email, int quantidadeDoada)
         {
             Id = id;
             Nome = nome;
