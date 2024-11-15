@@ -10,7 +10,12 @@ namespace DonationAPP
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.CustomSchemaIds(type => type.FullName);
+            });
+
             builder.Services.AddCasosDeUso();
 
             var app = builder.Build();
