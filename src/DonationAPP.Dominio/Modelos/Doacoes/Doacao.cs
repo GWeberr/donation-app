@@ -6,7 +6,7 @@ namespace DonationAPP.Dominio.Modelos.Doacoes
     {
         public Guid Id { get; private set; }
         public Guid InstituicaoId { get; private set; }
-        public Guid TipoDaocaoId { get; private set; }
+        public Guid TipoDoacaoId { get; private set; }
         public decimal Valor { get; private set; }
         public DateTime Data { get; private set; }
 
@@ -14,7 +14,7 @@ namespace DonationAPP.Dominio.Modelos.Doacoes
         {
             Id = id;
             InstituicaoId = instituicaoId;
-            TipoDaocaoId = tipoDoacaoId;
+            TipoDoacaoId = tipoDoacaoId;
             Valor = valor;
             Data = DateTime.UtcNow;
         }

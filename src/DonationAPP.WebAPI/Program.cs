@@ -1,4 +1,5 @@
 using DonationAPP.WebAPI.Extensoes.CasosDeUso;
+using DonationAPP.WebAPI.Extensoes.ServicosDeAplicacao;
 
 namespace DonationAPP
 {
@@ -17,6 +18,7 @@ namespace DonationAPP
             });
 
             builder.Services.AddCasosDeUso();
+            builder.Services.AddDataBase(builder.Configuration);
 
             var app = builder.Build();
 
