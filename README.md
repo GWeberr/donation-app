@@ -7,7 +7,7 @@ Projeto de API para uma aplicação de gestão de doações.
 ```
 > Criação de nova migration
 
-dotnet-ef migrations add **__NomeDaMigration__** --project .\DonationAPP.Infraestrutura.SQLite\DonationAPP.Infraestrutura.SQLite.csproj --startup-project .\DonationAPP.WebAPI\DonationAPP.WebAPI.csproj
+dotnet-ef migrations add NomeDaMigration --project .\DonationAPP.Infraestrutura.SQLite\DonationAPP.Infraestrutura.SQLite.csproj --startup-project .\DonationAPP.WebAPI\DonationAPP.WebAPI.csproj
 
 > Remoção de uma migration
 
