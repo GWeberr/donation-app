@@ -1,5 +1,7 @@
 ﻿using DonationAPP.Aplicacao.Servicos;
+using DonationAPP.Dominio.Modelos.Instituicoes;
 using DonationAPP.Infraestrutura.SQLite;
+using DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Repositorios;
 using Microsoft.EntityFrameworkCore;
 
 namespace DonationAPP.WebAPI.Extensoes.ServicosDeAplicacao
@@ -13,6 +15,11 @@ namespace DonationAPP.WebAPI.Extensoes.ServicosDeAplicacao
                     configuration.GetConnectionString("donation-app-db")));
 
             services.AddScoped<IUnidadeDeTrabalho, UnidadeDeTrabalho>();
+        }
+
+        public static void AddRepositorios(this IServiceCollection services)
+        {
+            services.AddScoped<IInstituicaoRepositorio, InstituicaoRepositorio>();
         }
     }
 }

@@ -19,6 +19,7 @@ namespace DonationAPP
 
             builder.Services.AddCasosDeUso();
             builder.Services.AddDataBase(builder.Configuration);
+            builder.Services.AddRepositorios();
 
             var app = builder.Build();
 

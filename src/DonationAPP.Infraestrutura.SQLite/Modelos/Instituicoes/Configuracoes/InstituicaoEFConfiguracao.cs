@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes
+namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Configuracoes
 {
     internal sealed class InstituicaoEFConfiguracao :
         IEntityTypeConfiguration<Instituicao>
