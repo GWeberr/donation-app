@@ -41,6 +41,9 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes
                 .Property(propriedade => propriedade.DoacoesRecebidas)
                 .HasColumnName("DOACOESRECEBIDAS")
                 .IsRequired();
+
+            builder
+                .Ignore(p => p.Doadores);
         }
     }
 }
