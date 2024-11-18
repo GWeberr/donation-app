@@ -8,15 +8,15 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Repositorios
     {
         private readonly DbContexto _dbContexto = dbContexto;
 
-        public async Task<List<Instituicao>> ObterAsync(Guid id)
+        public async Task<Instituicao?> ObterAsync(Guid id)
         {
-            var instituicoes = await _dbContexto
+            var instituicao = await _dbContexto
                 .Set<Instituicao>()
                 .Where(entidade => entidade.Id == id)
-                .ToListAsync()
+                .FirstOrDefaultAsync()
                 .ConfigureAwait(false);
 
-            return instituicoes;
+            return instituicao;
         }
     }
 }

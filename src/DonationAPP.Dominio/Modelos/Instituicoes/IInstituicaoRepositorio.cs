@@ -2,6 +2,6 @@
 {
     public interface IInstituicaoRepositorio
     {
-        Task<List<Instituicao>> ObterAsync(Guid id);
+        Task<Instituicao?> ObterAsync(Guid id);
     }
 }
