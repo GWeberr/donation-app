@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DonationAPP.Infraestrutura.SQLite.Migrations
 {
     /// <inheritdoc />
-    public partial class CriacaoSchemaInicial : Migration
+    public partial class CriacaoInicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,10 +16,10 @@ namespace DonationAPP.Infraestrutura.SQLite.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(type: "TEXT", nullable: false),
-                    DATA = table.Column<Guid>(type: "TEXT", nullable: false),
+                    INSTITUICAOID = table.Column<Guid>(type: "TEXT", nullable: false),
                     TIPODOACAOID = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Valor = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Data = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    VALOR = table.Column<decimal>(type: "TEXT", nullable: false),
+                    DATA = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

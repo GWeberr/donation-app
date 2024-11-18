@@ -38,12 +38,12 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.Doacoes
                 .IsRequired();
 
             builder
-                .Property(propriedade => propriedade.InstituicaoId)
+                .Property(propriedade => propriedade.Valor)
                 .HasColumnName("VALOR")
                 .IsRequired();
 
             builder
-                .Property(propriedade => propriedade.InstituicaoId)
+                .Property(propriedade => propriedade.Data)
                 .HasColumnName("DATA")
                 .IsRequired();
         }

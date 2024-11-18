@@ -25,18 +25,20 @@ namespace DonationAPP.Infraestrutura.SQLite.Migrations
                         .HasColumnName("ID");
 
                     b.Property<DateTime>("Data")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("TEXT")
+                        .HasColumnName("DATA");
 
                     b.Property<Guid>("InstituicaoId")
                         .HasColumnType("TEXT")
-                        .HasColumnName("DATA");
+                        .HasColumnName("INSTITUICAOID");
 
                     b.Property<Guid>("TipoDoacaoId")
                         .HasColumnType("TEXT")
                         .HasColumnName("TIPODOACAOID");
 
                     b.Property<decimal>("Valor")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("TEXT")
+                        .HasColumnName("VALOR");
 
                     b.HasKey("Id");
 

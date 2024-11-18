@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DonationAPP.Infraestrutura.SQLite.Migrations
 {
     [DbContext(typeof(DbContexto))]
-    [Migration("20241115223329_CriacaoSchemaInicial")]
-    partial class CriacaoSchemaInicial
+    [Migration("20241118015045_CriacaoInicial")]
+    partial class CriacaoInicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,18 +28,20 @@ namespace DonationAPP.Infraestrutura.SQLite.Migrations
                         .HasColumnName("ID");
 
                     b.Property<DateTime>("Data")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("TEXT")
+                        .HasColumnName("DATA");
 
                     b.Property<Guid>("InstituicaoId")
                         .HasColumnType("TEXT")
-                        .HasColumnName("DATA");
+                        .HasColumnName("INSTITUICAOID");
 
                     b.Property<Guid>("TipoDoacaoId")
                         .HasColumnType("TEXT")
                         .HasColumnName("TIPODOACAOID");
 
                     b.Property<decimal>("Valor")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("TEXT")
+                        .HasColumnName("VALOR");
 
                     b.HasKey("Id");
 
