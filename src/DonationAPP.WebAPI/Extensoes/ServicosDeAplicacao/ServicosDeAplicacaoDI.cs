@@ -1,4 +1,5 @@
-﻿using DonationAPP.Infraestrutura.SQLite;
+﻿using DonationAPP.Aplicacao.Servicos;
+using DonationAPP.Infraestrutura.SQLite;
 using Microsoft.EntityFrameworkCore;
 
 namespace DonationAPP.WebAPI.Extensoes.ServicosDeAplicacao
@@ -10,6 +11,8 @@ namespace DonationAPP.WebAPI.Extensoes.ServicosDeAplicacao
             services.AddDbContext<DbContexto>(options 
                 => options.UseSqlite(
                     configuration.GetConnectionString("donation-app-db")));
+
+            services.AddScoped<IUnidadeDeTrabalho, UnidadeDeTrabalho>();
         }
     }
 }

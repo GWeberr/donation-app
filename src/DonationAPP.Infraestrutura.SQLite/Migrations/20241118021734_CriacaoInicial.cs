@@ -25,6 +25,20 @@ namespace DonationAPP.Infraestrutura.SQLite.Migrations
                 {
                     table.PrimaryKey("PK_DOACAO", x => x.ID);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "INSTITUICAO",
+                columns: table => new
+                {
+                    ID = table.Column<Guid>(type: "TEXT", nullable: false),
+                    NOME = table.Column<string>(type: "TEXT", nullable: false),
+                    CNPJ = table.Column<string>(type: "TEXT", nullable: false),
+                    DOACOESRECEBIDAS = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_INSTITUICAO", x => x.ID);
+                });
         }
 
         /// <inheritdoc />
@@ -32,6 +46,9 @@ namespace DonationAPP.Infraestrutura.SQLite.Migrations
         {
             migrationBuilder.DropTable(
                 name: "DOACAO");
+
+            migrationBuilder.DropTable(
+                name: "INSTITUICAO");
         }
     }
 }

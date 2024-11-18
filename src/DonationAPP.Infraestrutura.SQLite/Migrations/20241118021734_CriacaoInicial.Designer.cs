@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DonationAPP.Infraestrutura.SQLite.Migrations
 {
     [DbContext(typeof(DbContexto))]
-    [Migration("20241118015045_CriacaoInicial")]
+    [Migration("20241118021734_CriacaoInicial")]
     partial class CriacaoInicial
     {
         /// <inheritdoc />
@@ -46,6 +46,32 @@ namespace DonationAPP.Infraestrutura.SQLite.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("DOACAO", (string)null);
+                });
+
+            modelBuilder.Entity("DonationAPP.Dominio.Modelos.Instituicoes.Instituicao", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("ID");
+
+                    b.Property<string>("CNPJ")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("CNPJ");
+
+                    b.Property<int>("DoacoesRecebidas")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("DOACOESRECEBIDAS");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("NOME");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("INSTITUICAO", (string)null);
                 });
 #pragma warning restore 612, 618
         }

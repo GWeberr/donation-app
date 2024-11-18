@@ -44,6 +44,32 @@ namespace DonationAPP.Infraestrutura.SQLite.Migrations
 
                     b.ToTable("DOACAO", (string)null);
                 });
+
+            modelBuilder.Entity("DonationAPP.Dominio.Modelos.Instituicoes.Instituicao", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("ID");
+
+                    b.Property<string>("CNPJ")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("CNPJ");
+
+                    b.Property<int>("DoacoesRecebidas")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("DOACOESRECEBIDAS");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("NOME");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("INSTITUICAO", (string)null);
+                });
 #pragma warning restore 612, 618
         }
     }
