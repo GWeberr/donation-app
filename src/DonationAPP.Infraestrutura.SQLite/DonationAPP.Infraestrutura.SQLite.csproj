@@ -15,6 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\DonationAPP.Aplicacao\DonationAPP.Aplicacao.csproj" />
 	  <ProjectReference Include="..\DonationAPP.Dominio\DonationAPP.Dominio.csproj" />
 	</ItemGroup>
 

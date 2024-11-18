@@ -14,11 +14,11 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes
         internal Instituicao(
             Guid id,
             string nome,
-            string cnpj)
+            string cNPJ)
         {
             Id = id;
             Nome = nome;
-            CNPJ = cnpj;
+            CNPJ = cNPJ;
             DoacoesRecebidas = 0;
             _doadores = null;
         }

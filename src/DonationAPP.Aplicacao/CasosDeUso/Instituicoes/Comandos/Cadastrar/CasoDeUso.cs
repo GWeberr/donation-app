@@ -9,7 +9,10 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Cadastrar
         {
             try
             {
-                var instituicao = InstituicaoFabrica.Criar(dadosDeEntrada.Id, dadosDeEntrada.Nome, dadosDeEntrada.CNPJ);
+                var instituicao = InstituicaoFabrica
+                    .Criar(dadosDeEntrada.Id, dadosDeEntrada.Nome, dadosDeEntrada.CNPJ);
+
+
             }
             catch
             {
