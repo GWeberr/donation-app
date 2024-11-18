@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DonationAPP.Infraestrutura.SQLite.Modelos.Doacoes
+namespace DonationAPP.Infraestrutura.SQLite.Modelos.Doacoes.Configuracoes
 {
     internal sealed class DoacaoEFConfiguracao :
         IEntityTypeConfiguration<Doacao>

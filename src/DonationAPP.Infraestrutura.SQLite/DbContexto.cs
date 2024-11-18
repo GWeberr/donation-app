@@ -1,7 +1,7 @@
 ﻿using DonationAPP.Dominio.Modelos.Doacoes;
 using DonationAPP.Dominio.Modelos.Instituicoes;
-using DonationAPP.Infraestrutura.SQLite.Modelos.Doacoes;
-using DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes;
+using DonationAPP.Infraestrutura.SQLite.Modelos.Doacoes.Configuracoes;
+using DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Configuracoes;
 using Microsoft.EntityFrameworkCore;
 
 namespace DonationAPP.Infraestrutura.SQLite
