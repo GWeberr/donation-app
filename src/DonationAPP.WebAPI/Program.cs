@@ -1,4 +1,5 @@
 using DonationAPP.WebAPI.Extensoes.CasosDeUso;
+using DonationAPP.WebAPI.Extensoes.ServicosDeAplicacao;
 
 namespace DonationAPP
 {
@@ -10,8 +11,14 @@ namespace DonationAPP
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.CustomSchemaIds(type => type.FullName);
+            });
+
             builder.Services.AddCasosDeUso();
+            builder.Services.AddDataBase(builder.Configuration);
 
             var app = builder.Build();
 

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationAPP.Dominio", "Dona
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationAPP.Aplicacao", "DonationAPP.Aplicacao\DonationAPP.Aplicacao.csproj", "{7F17E502-7874-4C60-A388-46FB07B35786}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonationAPP.Infraestrutura.SQLite", "DonationAPP.Infraestrutura.SQLite\DonationAPP.Infraestrutura.SQLite.csproj", "{8C94FF25-CD40-42A9-970C-7DF8709BB138}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7F17E502-7874-4C60-A388-46FB07B35786}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F17E502-7874-4C60-A388-46FB07B35786}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F17E502-7874-4C60-A388-46FB07B35786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C94FF25-CD40-42A9-970C-7DF8709BB138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C94FF25-CD40-42A9-970C-7DF8709BB138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C94FF25-CD40-42A9-970C-7DF8709BB138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C94FF25-CD40-42A9-970C-7DF8709BB138}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
