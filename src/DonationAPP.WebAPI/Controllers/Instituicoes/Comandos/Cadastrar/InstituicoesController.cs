@@ -19,11 +19,12 @@ namespace DonationAPP.Controllers.Instituicoes.Comandos.Cadastrar
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] RequisicaoDTO requisicaoDTO)
+        public async Task<IActionResult> Post([FromBody] RequisicaoDTO requisicaoDTO, CancellationToken tokenDeCancelamento)
         {
             var dadosDeEntrada = new DadosDeEntrada(requisicaoDTO.Id, requisicaoDTO.Nome, requisicaoDTO.CNPJ);
 
-            _casoDeUso.Executar(dadosDeEntrada);
+            await _casoDeUso.ExecutarAsync(dadosDeEntrada, tokenDeCancelamento)
+                .ConfigureAwait(false);
       
             return CreatedAtAction(nameof(Post), new { id = requisicaoDTO.Id }, requisicaoDTO);
         }
