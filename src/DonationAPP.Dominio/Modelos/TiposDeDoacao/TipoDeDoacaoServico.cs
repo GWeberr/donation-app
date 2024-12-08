@@ -17,5 +17,14 @@
 
             return tipoDeDoacao;
         }
+
+        public async Task<IEnumerable<TipoDoacao>?> ObterTodosAsync()
+        {
+            var tiposDeDoacao = await _repositorio
+                .ObterTodosAsync()
+                .ConfigureAwait(false);
+
+            return tiposDeDoacao;
+        }
     }
 }

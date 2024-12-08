@@ -18,5 +18,15 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.TiposDeDoacao.Repositorios
 
             return tipoDeDoacao;
         }
+
+        public async Task<IEnumerable<TipoDoacao>?> ObterTodosAsync()
+        {
+            var tiposDeDoacao = await _dbContexto
+                .Set<TipoDoacao>()
+                .ToListAsync()
+                .ConfigureAwait(false);
+
+            return tiposDeDoacao;
+        }
     }
 }
