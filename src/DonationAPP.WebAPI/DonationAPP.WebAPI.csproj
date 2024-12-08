@@ -7,6 +7,8 @@
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
 		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<Platforms>x64;AnyCPU</Platforms>
+		<NoWarn>1591</NoWarn>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>

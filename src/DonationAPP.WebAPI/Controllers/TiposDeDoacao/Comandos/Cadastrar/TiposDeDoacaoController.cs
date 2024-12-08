@@ -18,6 +18,16 @@ namespace DonationAPP.WebAPI.Controllers.TiposDeDoacao.Comandos.Cadastrar
             _apresentador = apresentador;
         }
 
+        /// <summary>
+        /// Cadastra um novo tipo de doação.
+        /// </summary>
+        /// <param name="requisicaoDTO">Dados do registro que será cadastrado conforme <see cref="RequisicaoDTO"/></param>
+        /// <param name="tokenDeCancelamento"></param>
+        /// <response code="201">Sucesso.</response>
+        /// <response code="201">Criado com sucesso.</response>
+        /// <response code="400">Requisição contém dados inválidos ou algum erro na execução da regra de negócio.</response>
+        /// <response code="500">Ocorreu um erro insperado no servidor, tente novamente mais tarde.</response>
+        /// <returns>Retorna um <see cref="RespostaDTO"/> contendo os dados cadastrados</returns>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] RequisicaoDTO requisicaoDTO, CancellationToken tokenDeCancelamento)
         {
