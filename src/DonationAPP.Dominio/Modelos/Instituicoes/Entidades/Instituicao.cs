@@ -8,6 +8,7 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes.Entidades
         public string Nome { get; private set; }
         public string CNPJ { get; private set; }
         public int DoacoesRecebidas { get; private set; }
+        public InstituicaoEndereco? Endereco { get; private set; }
         public IReadOnlyCollection<Doador>? Doadores { get { return _doadores; } }
         private List<Doador>? _doadores;
 
@@ -21,6 +22,11 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes.Entidades
             CNPJ = cNPJ;
             DoacoesRecebidas = 0;
             _doadores = null;
+        }
+
+        public void Vincular(InstituicaoEndereco endereco)
+        {
+            Endereco = endereco;
         }
 
         internal void Carregar(List<Doador> doadores)

@@ -19,6 +19,7 @@ namespace DonationAPP.Infraestrutura.SQLite
         {
             modelBuilder.ApplyConfiguration(new DoacaoEFConfiguracao());
             modelBuilder.ApplyConfiguration(new InstituicaoEFConfiguracao());
+            modelBuilder.ApplyConfiguration(new InstituicaoEnderecoEFConfiguracao());
             modelBuilder.ApplyConfiguration(new TipoDeDaocaoEFConfiguracao());
         }
     }

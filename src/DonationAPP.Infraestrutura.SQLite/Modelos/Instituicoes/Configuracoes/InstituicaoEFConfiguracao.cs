@@ -13,6 +13,7 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Configuracoes
 
             Montarindices(builder);
             MontarColunas(builder);
+            MontarRelacionamentos(builder);
         }
 
         private static void Montarindices(EntityTypeBuilder<Instituicao> builder)
@@ -44,6 +45,15 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Configuracoes
 
             builder
                 .Ignore(p => p.Doadores);
+        }
+
+        private static void MontarRelacionamentos(EntityTypeBuilder<Instituicao> builder)
+        {
+            builder
+                .HasOne(entidadePrimaria => entidadePrimaria.Endereco!)
+                .WithOne()
+                .HasForeignKey<InstituicaoEndereco>(entidadeEstrangeira => entidadeEstrangeira.InstituicaoId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
