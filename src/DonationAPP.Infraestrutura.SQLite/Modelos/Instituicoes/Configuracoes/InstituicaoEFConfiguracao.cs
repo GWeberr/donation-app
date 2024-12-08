@@ -42,9 +42,6 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Configuracoes
                 .Property(propriedade => propriedade.DoacoesRecebidas)
                 .HasColumnName("DOACOESRECEBIDAS")
                 .IsRequired();
-
-            builder
-                .Ignore(p => p.Doadores);
         }
 
         private static void MontarRelacionamentos(EntityTypeBuilder<Instituicao> builder)
@@ -54,6 +51,12 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Configuracoes
                 .WithOne()
                 .HasForeignKey<InstituicaoEndereco>(entidadeEstrangeira => entidadeEstrangeira.InstituicaoId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder
+                .HasMany(entidadePrimaria => entidadePrimaria.Doacoes!)
+                .WithOne()
+                .HasForeignKey(entidadeEstrangeira => entidadeEstrangeira.InstituicaoId)
+                .OnDelete(DeleteBehavior.Cascade); 
         }
     }
 }

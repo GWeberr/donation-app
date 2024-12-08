@@ -1,6 +1,4 @@
-﻿using DonationAPP.Dominio.Modelos.Doadores;
-
-namespace DonationAPP.Dominio.Modelos.Instituicoes.Entidades
+﻿namespace DonationAPP.Dominio.Modelos.Instituicoes.Entidades
 {
     public sealed class Instituicao
     {
@@ -9,8 +7,8 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes.Entidades
         public string CNPJ { get; private set; }
         public int DoacoesRecebidas { get; private set; }
         public InstituicaoEndereco? Endereco { get; private set; }
-        public IReadOnlyCollection<Doador>? Doadores { get { return _doadores; } }
-        private List<Doador>? _doadores;
+        public IReadOnlyCollection<InstituicaoDoacao>? Doacoes { get { return _doacoes; } }
+        private List<InstituicaoDoacao>? _doacoes;
 
         internal Instituicao(
             Guid id,
@@ -21,7 +19,7 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes.Entidades
             Nome = nome;
             CNPJ = cNPJ;
             DoacoesRecebidas = 0;
-            _doadores = null;
+            _doacoes = null;
         }
 
         public void Vincular(InstituicaoEndereco endereco)
@@ -29,35 +27,26 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes.Entidades
             Endereco = endereco;
         }
 
-        internal void Carregar(List<Doador> doadores)
+        internal void Carregar(List<InstituicaoDoacao> doacoes)
         {
-            _doadores = doadores;
+            if (_doacoes is not null)
+                throw new ArgumentException("Doações já carregadas para esta instituição");
+
+            _doacoes = doacoes;
         }
 
-        public void RegistrarDoacao(Guid doadorId, int quantidade)
+        public void Adicionar(InstituicaoDoacao doacaoNova)
         {
-            if (_doadores is null)
-                throw new Exception("Lista de doadores não foi carregada!");
+            if (_doacoes is null)
+                throw new ArgumentException("Doações não carregadas para esta instituição");
+            else if (doacaoNova is null)
+                throw new ArgumentException("Doações não informada");
+            else if (_doacoes.Any(doacao => doacao.Id == doacaoNova.Id))
+                throw new ArgumentException("Doações já existe nesta instituição");
 
-            var doador = _doadores.FirstOrDefault(d => d.Id == doadorId);
-            if (doador != null)
-            {
-                doador.RegistrarDoacao(quantidade);
-                DoacoesRecebidas += quantidade;
-            }
-            else
-                throw new Exception("Doador não encontrado para essa instituição.");
-        }
+            DoacoesRecebidas++;
 
-        public void AdicionarDoador(Doador doador)
-        {
-            if (_doadores is null)
-                throw new Exception("Lista de doadores não foi carregada!");
-
-            if (!_doadores.Exists(d => d.Id == doador.Id))
-                _doadores.Add(doador);
-            else
-                throw new Exception("Doador já está registrado.");
+            _doacoes.Add(doacaoNova);
         }
     }
 }
