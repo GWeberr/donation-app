@@ -1,16 +1,13 @@
-﻿using DonationAPP.Aplicacao.Servicos;
-using DonationAPP.Dominio.Modelos.Instituicoes;
+﻿using DonationAPP.Dominio.Modelos.Instituicoes;
 using DonationAPP.Dominio.Modelos.Instituicoes.Entidades;
 
 namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.Todos
 {
     public sealed class CasoDeUso(
         InstituicaoServico instituicaoServico,
-        IUnidadeDeTrabalho unidadeDeTrabalho, 
         IPortaDeSaida portaDeSaida)
     {
         private readonly InstituicaoServico _instituicaoServico = instituicaoServico;
-        private readonly IUnidadeDeTrabalho _unidadeDeTrabalho = unidadeDeTrabalho;
         private readonly IPortaDeSaida _portaDeSaida = portaDeSaida;
 
         public async Task ExecutarAsync(CancellationToken tokenDeCancelamento)

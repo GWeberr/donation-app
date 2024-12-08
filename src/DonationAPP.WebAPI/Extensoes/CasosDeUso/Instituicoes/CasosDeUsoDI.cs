@@ -12,6 +12,8 @@
             Consultas.Todos.CasoDeUsoDI.Add(ref services);
 
             Relacionados.Doacoes.Comandos.Realizar.CasoDeUsoDI.Add(ref services);
+
+            Relacionados.Doacoes.Consultas.Todos.CasoDeUsoDI.Add(ref services);
         }
     }
 }
