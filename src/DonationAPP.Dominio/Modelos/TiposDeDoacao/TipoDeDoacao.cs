@@ -1,11 +1,11 @@
 ﻿namespace DonationAPP.Dominio.Modelos.TiposDeDoacao
 {
-    public sealed class TipoDoacao
+    public sealed class TipoDeDoacao
     {
         public Guid Id { get; private set; }
         public string Nome { get; private set; }
 
-        public TipoDoacao(
+        public TipoDeDoacao(
             Guid id, 
             string nome)
         {

@@ -4,12 +4,12 @@
     {
         private readonly ITipoDeDoacaoRepositorio _repositorio = repositorio;
 
-        public async Task<TipoDoacao?> ObterAsync(Guid id)
+        public async Task<TipoDeDoacao?> ObterAsync(Guid id)
         {
             return await _repositorio.ObterAsync(id);
         }
 
-        public async Task<TipoDoacao> ObterValidoAsync(Guid id)
+        public async Task<TipoDeDoacao> ObterValidoAsync(Guid id)
         {
             var tipoDeDoacao = await _repositorio.ObterAsync(id);
             if (tipoDeDoacao is null)
@@ -18,7 +18,7 @@
             return tipoDeDoacao;
         }
 
-        public async Task<IEnumerable<TipoDoacao>?> ObterTodosAsync()
+        public async Task<IEnumerable<TipoDeDoacao>?> ObterTodosAsync()
         {
             var tiposDeDoacao = await _repositorio
                 .ObterTodosAsync()

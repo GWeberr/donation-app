@@ -2,7 +2,7 @@
 {
     public interface ITipoDeDoacaoRepositorio
     {
-        Task<TipoDoacao?> ObterAsync(Guid id);
-        Task<IEnumerable<TipoDoacao>?> ObterTodosAsync();
+        Task<TipoDeDoacao?> ObterAsync(Guid id);
+        Task<IEnumerable<TipoDeDoacao>?> ObterTodosAsync();
     }
 }

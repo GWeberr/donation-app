@@ -8,10 +8,10 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.TiposDeDoacao.Repositorios
     {
         private readonly DbContexto _dbContexto = dbContexto;
 
-        public async Task<TipoDoacao?> ObterAsync(Guid id)
+        public async Task<TipoDeDoacao?> ObterAsync(Guid id)
         {
             var tipoDeDoacao = await _dbContexto
-                .Set<TipoDoacao>()
+                .Set<TipoDeDoacao>()
                 .Where(entidade => entidade.Id == id)
                 .FirstOrDefaultAsync()
                 .ConfigureAwait(false);
@@ -19,10 +19,10 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.TiposDeDoacao.Repositorios
             return tipoDeDoacao;
         }
 
-        public async Task<IEnumerable<TipoDoacao>?> ObterTodosAsync()
+        public async Task<IEnumerable<TipoDeDoacao>?> ObterTodosAsync()
         {
             var tiposDeDoacao = await _dbContexto
-                .Set<TipoDoacao>()
+                .Set<TipoDeDoacao>()
                 .ToListAsync()
                 .ConfigureAwait(false);
 

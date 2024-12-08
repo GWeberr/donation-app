@@ -28,7 +28,7 @@ namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Consultas.Todos
             }
         }
 
-        private static DadosDeSaida ConstruirDadosDeSaida(IEnumerable<TipoDoacao> tiposDeDoacao)
+        private static DadosDeSaida ConstruirDadosDeSaida(IEnumerable<TipoDeDoacao> tiposDeDoacao)
         {
             var dadosDeSaida = new DadosDeSaida(
                 tiposDeDoacao.Select(tipoDeDoacao =>

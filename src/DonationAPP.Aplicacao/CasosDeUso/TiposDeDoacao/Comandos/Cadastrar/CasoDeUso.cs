@@ -12,7 +12,7 @@ namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Cadastrar
         {
             try
             {
-                var tipoDeDoacao = TipoDoacaoFabrica
+                var tipoDeDoacao = TipoDeDoacaoFabrica
                     .Criar(dadosDeEntrada.Id, dadosDeEntrada.Nome);
 
                 await _unidadeDeTrabalho

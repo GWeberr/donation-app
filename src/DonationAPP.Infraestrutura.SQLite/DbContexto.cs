@@ -13,7 +13,7 @@ namespace DonationAPP.Infraestrutura.SQLite
     {
         public DbSet<Doacao> Doacoes { get; private set; } = default!;
         public DbSet<Instituicao> Instituicoes { get; private set; } = default!;
-        public DbSet<TipoDoacao> TiposDoacao { get; private set; } = default!;
+        public DbSet<TipoDeDoacao> TiposDoacao { get; private set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
