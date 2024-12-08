@@ -25,6 +25,14 @@ namespace DonationAPP.Infraestrutura.SQLite
                 .Update(entidade);
         }
 
+        public void Remover<T>(T entidade)
+            where T : class
+        {
+            _dbContexto
+                .Set<T>()
+                .Remove(entidade);
+        }
+
         public async Task ConfirmarAlteracoesAsync(CancellationToken tokenDeCancelamento)
         {
             await _dbContexto
