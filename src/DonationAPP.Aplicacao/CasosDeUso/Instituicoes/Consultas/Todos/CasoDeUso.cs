@@ -30,10 +30,11 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.Todos
         private static DadosDeSaida ConstruirDadosDeSaida(IEnumerable<Instituicao> instituicoes)
         {
             var dadosDeSaida = new DadosDeSaida(
-                instituicoes.Select(tipoDeDoacao =>
+                instituicoes.Select(instituicao =>
                     new DadosDeSaidaItem(
-                        tipoDeDoacao.Id,
-                        tipoDeDoacao.Nome))
+                        instituicao.Id,
+                        instituicao.Nome,
+                        instituicao.CNPJ))
                 .ToList());
 
             return dadosDeSaida;

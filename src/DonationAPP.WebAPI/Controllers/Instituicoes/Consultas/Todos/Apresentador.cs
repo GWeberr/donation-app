@@ -14,7 +14,8 @@ namespace DonationAPP.WebAPI.Controllers.Instituicoes.Consultas.Todos
                 item => new RespostaDTOItem()
                 {
                     Id = item.Id,
-                    Nome = item.Nome
+                    Nome = item.Nome,
+                    CNPJ = item.CNPJ
                 }).ToArray();
 
             var respotaDTO = new RespostaDTO(itens);
