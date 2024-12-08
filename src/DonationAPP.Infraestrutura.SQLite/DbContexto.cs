@@ -1,6 +1,6 @@
-﻿using DonationAPP.Dominio.Modelos.Doacoes;
-using DonationAPP.Dominio.Modelos.Instituicoes;
-using DonationAPP.Dominio.Modelos.TiposDeDoacao;
+﻿using DonationAPP.Dominio.Modelos.Doacoes.Entidades;
+using DonationAPP.Dominio.Modelos.Instituicoes.Entidades;
+using DonationAPP.Dominio.Modelos.TiposDeDoacao.Entidades;
 using DonationAPP.Infraestrutura.SQLite.Modelos.Doacoes.Configuracoes;
 using DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Configuracoes;
 using DonationAPP.Infraestrutura.SQLite.Modelos.TiposDeDoacao.Configuracoes;

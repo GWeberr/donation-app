@@ -1,6 +1,6 @@
 ﻿using DonationAPP.Dominio.Modelos.Doadores;
 
-namespace DonationAPP.Dominio.Modelos.Instituicoes
+namespace DonationAPP.Dominio.Modelos.Instituicoes.Entidades
 {
     public sealed class Instituicao
     {

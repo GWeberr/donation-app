@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DonationAPP.Dominio.Modelos.Instituicoes.Entidades;
+using System;
 
 namespace DonationAPP.Dominio.Modelos.Instituicoes
 {

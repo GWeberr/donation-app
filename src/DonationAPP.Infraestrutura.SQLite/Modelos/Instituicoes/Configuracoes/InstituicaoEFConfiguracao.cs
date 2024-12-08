@@ -1,4 +1,4 @@
-﻿using DonationAPP.Dominio.Modelos.Instituicoes;
+﻿using DonationAPP.Dominio.Modelos.Instituicoes.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

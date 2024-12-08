@@ -1,4 +1,4 @@
-﻿namespace DonationAPP.Dominio.Modelos.TiposDeDoacao
+﻿namespace DonationAPP.Dominio.Modelos.TiposDeDoacao.Entidades
 {
     public sealed class TipoDeDoacao
     {
@@ -6,7 +6,7 @@
         public string Nome { get; private set; }
 
         public TipoDeDoacao(
-            Guid id, 
+            Guid id,
             string nome)
         {
             Id = id;

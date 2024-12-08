@@ -1,4 +1,6 @@
-﻿namespace DonationAPP.Dominio.Modelos.Instituicoes
+﻿using DonationAPP.Dominio.Modelos.Instituicoes.Entidades;
+
+namespace DonationAPP.Dominio.Modelos.Instituicoes
 {
     public interface IInstituicaoRepositorio
     {

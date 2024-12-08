@@ -1,4 +1,6 @@
-﻿namespace DonationAPP.Dominio.Modelos.Doacoes
+﻿using DonationAPP.Dominio.Modelos.Doacoes.Entidades;
+
+namespace DonationAPP.Dominio.Modelos.Doacoes
 {
     public static class DoacaoFabrica
     {

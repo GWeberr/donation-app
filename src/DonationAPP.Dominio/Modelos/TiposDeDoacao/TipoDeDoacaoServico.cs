@@ -1,4 +1,6 @@
-﻿namespace DonationAPP.Dominio.Modelos.TiposDeDoacao
+﻿using DonationAPP.Dominio.Modelos.TiposDeDoacao.Entidades;
+
+namespace DonationAPP.Dominio.Modelos.TiposDeDoacao
 {
     public sealed class TipoDeDoacaoServico(ITipoDeDoacaoRepositorio repositorio)
     {

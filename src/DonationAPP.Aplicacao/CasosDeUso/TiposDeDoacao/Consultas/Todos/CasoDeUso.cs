@@ -1,5 +1,6 @@
 ﻿using DonationAPP.Aplicacao.Servicos;
 using DonationAPP.Dominio.Modelos.TiposDeDoacao;
+using DonationAPP.Dominio.Modelos.TiposDeDoacao.Entidades;
 
 namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Consultas.Todos
 {

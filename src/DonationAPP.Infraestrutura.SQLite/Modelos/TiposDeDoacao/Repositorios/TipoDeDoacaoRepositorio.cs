@@ -1,4 +1,5 @@
 ﻿using DonationAPP.Dominio.Modelos.TiposDeDoacao;
+using DonationAPP.Dominio.Modelos.TiposDeDoacao.Entidades;
 using Microsoft.EntityFrameworkCore;
 
 namespace DonationAPP.Infraestrutura.SQLite.Modelos.TiposDeDoacao.Repositorios

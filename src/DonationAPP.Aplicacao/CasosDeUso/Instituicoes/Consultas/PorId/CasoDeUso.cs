@@ -1,4 +1,5 @@
 ﻿using DonationAPP.Dominio.Modelos.Instituicoes;
+using DonationAPP.Dominio.Modelos.Instituicoes.Entidades;
 
 namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.PorId
 {
