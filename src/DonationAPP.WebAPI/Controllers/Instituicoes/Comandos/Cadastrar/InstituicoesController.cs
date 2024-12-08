@@ -1,4 +1,5 @@
 ﻿using DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Cadastrar;
+using DonationAPP.WebAPI.Controllers.Instituicoes.Comandos.Cadastrar;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DonationAPP.Controllers.Instituicoes.Comandos.Cadastrar
@@ -8,14 +9,14 @@ namespace DonationAPP.Controllers.Instituicoes.Comandos.Cadastrar
     public class InstituicoesController : ControllerBase
     {
         private readonly CasoDeUso _casoDeUso;
-        private readonly ILogger<InstituicoesController> _logger;
+        private readonly Apresentador _apresentador;
 
         public InstituicoesController(
             CasoDeUso casoDeUso,
-            ILogger<InstituicoesController> logger)
+            Apresentador apresentador)
         {
             _casoDeUso = casoDeUso;
-            _logger = logger;
+            _apresentador = apresentador;
         }
 
         [HttpPost]
@@ -25,9 +26,8 @@ namespace DonationAPP.Controllers.Instituicoes.Comandos.Cadastrar
 
             await _casoDeUso.ExecutarAsync(dadosDeEntrada, tokenDeCancelamento)
                 .ConfigureAwait(false);
-      
-            return CreatedAtAction(nameof(Post), new { id = requisicaoDTO.Id }, requisicaoDTO);
-        }
 
+            return _apresentador.ViewModel;
+        }
     }
 }

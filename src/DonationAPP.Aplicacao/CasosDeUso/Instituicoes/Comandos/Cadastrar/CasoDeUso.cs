@@ -1,12 +1,14 @@
 ﻿using DonationAPP.Aplicacao.Servicos;
 using DonationAPP.Dominio.Modelos.Instituicoes;
-using System;
 
 namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Cadastrar
 {
-    public sealed class CasoDeUso(IUnidadeDeTrabalho unidadeDeTrabalho)
+    public sealed class CasoDeUso(
+        IUnidadeDeTrabalho unidadeDeTrabalho,
+        IPortaDeSaida portaDeSaida)
     {
         private readonly IUnidadeDeTrabalho _unidadeDeTrabalho = unidadeDeTrabalho;
+        private readonly IPortaDeSaida _portaDeSaida = portaDeSaida;
 
         public async Task ExecutarAsync(DadosDeEntrada dadosDeEntrada, CancellationToken tokenDeCancelamento)
         {
@@ -22,6 +24,9 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Cadastrar
                 await _unidadeDeTrabalho
                     .ConfirmarAlteracoesAsync(tokenDeCancelamento)
                     .ConfigureAwait(false);
+
+                var dadosDeSaida = new DadosDeSaida(instituicao.Id, instituicao.Nome, instituicao.CNPJ);
+                _portaDeSaida.Sucesso(dadosDeSaida);
             }
             catch
             {

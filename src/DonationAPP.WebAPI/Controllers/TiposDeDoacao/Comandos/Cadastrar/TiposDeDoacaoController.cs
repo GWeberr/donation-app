@@ -8,14 +8,14 @@ namespace DonationAPP.WebAPI.Controllers.TiposDeDoacao.Comandos.Cadastrar
     public class TiposDeDoacaoController : ControllerBase
     {
         private readonly CasoDeUso _casoDeUso;
-        private readonly ILogger<TiposDeDoacaoController> _logger;
+        private readonly Apresentador _apresentador;
 
         public TiposDeDoacaoController(
-            CasoDeUso casoDeUso,
-            ILogger<TiposDeDoacaoController> logger)
+            CasoDeUso casoDeUso, 
+            Apresentador apresentador)
         {
             _casoDeUso = casoDeUso;
-            _logger = logger;
+            _apresentador = apresentador;
         }
 
         [HttpPost]
@@ -25,9 +25,8 @@ namespace DonationAPP.WebAPI.Controllers.TiposDeDoacao.Comandos.Cadastrar
 
             await _casoDeUso.ExecutarAsync(dadosDeEntrada, tokenDeCancelamento)
                 .ConfigureAwait(false);
-      
-            return CreatedAtAction(nameof(Post), new { id = requisicaoDTO.Id }, requisicaoDTO);
-        }
 
+            return _apresentador.ViewModel;
+        }
     }
 }
