@@ -6,6 +6,7 @@
         public Guid InstituicaoId { get; private set; }
         public Guid TipoDoacao_Id { get; private set; }
         public string TipoDeDoacao_Nome { get; private set; }
+        public string Descricao { get; private set; }
         public decimal Quantidade { get; private set; }
         public DateTime Data { get; private set; }
 
@@ -14,12 +15,14 @@
             Guid tipoDoacao_Id,
             string tipoDeDoacao_Nome,
             Guid id,
+            string descricao,
             decimal quantidade)
         {
             Id = id;
             InstituicaoId = instituicaoId;
             TipoDoacao_Id = tipoDoacao_Id;
             TipoDeDoacao_Nome = tipoDeDoacao_Nome;
+            Descricao = descricao;
             Quantidade = quantidade;
             Data = DateTime.UtcNow;
         }

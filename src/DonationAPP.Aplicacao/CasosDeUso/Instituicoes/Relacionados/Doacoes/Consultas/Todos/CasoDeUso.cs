@@ -47,6 +47,7 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Relacionados.Doacoes.Con
                         doacao.Id,
                         doacao.TipoDoacao_Id,
                         doacao.TipoDeDoacao_Nome,
+                        doacao.Descricao,
                         doacao.Quantidade,
                         doacao.Data))
                 .ToList());

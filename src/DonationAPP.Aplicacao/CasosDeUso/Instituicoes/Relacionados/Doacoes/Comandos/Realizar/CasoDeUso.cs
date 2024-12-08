@@ -29,9 +29,10 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Relacionados.Doacoes.Com
 
                 var doacao = InstituicaoFabrica
                     .CriarDoacao(
-                    instituicao, 
-                    tipoDeDoacao, 
-                    dadosDeEntrada.Id, 
+                    instituicao,
+                    tipoDeDoacao,
+                    dadosDeEntrada.Id,
+                    dadosDeEntrada.Descricao,
                     dadosDeEntrada.Quantidade);
 
                 instituicao.Adicionar(doacao);
@@ -48,9 +49,14 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Relacionados.Doacoes.Com
                     doacao.TipoDoacao_Id,
                     doacao.TipoDeDoacao_Nome, 
                     doacao.Id, 
+                    doacao.Descricao,
                     doacao.Quantidade);
 
                 _portaDeSaida.Sucesso(dadosDeSaida);
+            }
+            catch (ArgumentException regraInvalidaEx)
+            {
+                _portaDeSaida.RegraInvalida(regraInvalidaEx.Message);
             }
             catch(Exception ex)
             {

@@ -36,6 +36,7 @@ namespace DonationAPP.WebAPI.Controllers.Instituicoes.Relacionados.Doacoes.Coman
                 instituicaoId, 
                 requisicaoDTO.TipoDeDoacao_Id, 
                 requisicaoDTO.Id, 
+                requisicaoDTO.Descricao,
                 requisicaoDTO.Quantidade);
 
             await _casoDeUso.ExecutarAsync(dadosDeEntrada, tokenDeCancelamento)
