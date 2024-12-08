@@ -8,12 +8,21 @@ namespace DonationAPP.Infraestrutura.SQLite
     {
         private readonly DbContexto _dbContexto = dbContexto;
 
-        public async Task CriarAsync<T>(T objetoParaCriar, CancellationToken tokenDeCancelamento) 
+        public async Task CriarAsync<T>(T entidade, CancellationToken tokenDeCancelamento) 
             where T : class
         {
             await _dbContexto
-                .AddAsync(objetoParaCriar, tokenDeCancelamento)
+                .Set<T>()
+                .AddAsync(entidade, tokenDeCancelamento)
                 .ConfigureAwait(false);
+        }
+
+        public void Alterar<T>(T entidade)
+            where T : class
+        {
+            _dbContexto
+                .Set<T>()
+                .Update(entidade);
         }
 
         public async Task ConfirmarAlteracoesAsync(CancellationToken tokenDeCancelamento)
