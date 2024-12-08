@@ -29,8 +29,9 @@ namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Remover
 
                 _portaDeSaida.Sucesso();
             }
-            catch
+            catch(Exception ex)
             {
+                _portaDeSaida.ErroGenerico(ex);
             }
         }
     }

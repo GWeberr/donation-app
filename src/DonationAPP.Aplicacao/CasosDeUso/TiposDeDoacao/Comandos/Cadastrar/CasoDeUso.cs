@@ -26,8 +26,9 @@ namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Cadastrar
                 var dadosDeSaida = new DadosDeSaida(tipoDeDoacao.Id, tipoDeDoacao.Nome);
                 _portaDeSaida.Sucesso(dadosDeSaida);
             }
-            catch
+            catch(Exception ex)
             {
+                _portaDeSaida.ErroGenerico(ex);
             }
         }
     }

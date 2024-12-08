@@ -3,7 +3,9 @@
 namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.PorId
 {
     public interface IPortaDeSaida :
-        IPortaDeSaidaSucesso<DadosDeSaida>
+        IPortaDeSaidaSucesso<DadosDeSaida>,
+        IPortaDeSaidaRegraInvalida,
+        IPortaDeSaidaErroGenerico
     {
     }
 }

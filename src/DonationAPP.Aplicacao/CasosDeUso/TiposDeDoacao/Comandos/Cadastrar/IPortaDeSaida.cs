@@ -3,7 +3,8 @@
 namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Cadastrar
 {
     public interface IPortaDeSaida :
-        IPortaDeSaidaSucesso<DadosDeSaida>
+        IPortaDeSaidaSucesso<DadosDeSaida>,
+        IPortaDeSaidaErroGenerico
     {
     }
 }

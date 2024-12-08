@@ -23,8 +23,9 @@ namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Consultas.Todos
                 var dadosDeSaida = ConstruirDadosDeSaida(tiposDeDoacao!);
                 _portaDeSaida.Sucesso(dadosDeSaida);
             }
-            catch
+            catch (Exception ex)
             {
+                _portaDeSaida.ErroGenerico(ex);
             }
         }
 

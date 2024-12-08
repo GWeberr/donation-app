@@ -18,11 +18,15 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.PorId
                     .ConfigureAwait(false);
 
                 var dadosDeSaida = ConstruirDadosDeSaida(instituicao);
-
                 _portaDeSaida.Sucesso(dadosDeSaida);
             }
-            catch (Exception)
+            catch(ArgumentException regraInvalidaEx)
             {
+                _portaDeSaida.RegraInvalida(regraInvalidaEx.Message);
+            }
+            catch (Exception ex)
+            {
+                _portaDeSaida.ErroGenerico(ex);
             }
         }
 
