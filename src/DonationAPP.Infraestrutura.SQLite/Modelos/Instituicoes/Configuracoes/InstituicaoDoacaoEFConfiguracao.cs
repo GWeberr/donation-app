@@ -43,6 +43,11 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Configuracoes
                 .IsRequired();
 
             builder
+               .Property(propriedade => propriedade.Descricao)
+               .HasColumnName("DESCRICAO")
+               .IsRequired();
+
+            builder
                 .Property(propriedade => propriedade.Quantidade)
                 .HasColumnName("QUANTIDADE")
                 .IsRequired();

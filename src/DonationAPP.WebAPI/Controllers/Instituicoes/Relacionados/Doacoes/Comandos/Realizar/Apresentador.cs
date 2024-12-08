@@ -16,6 +16,7 @@ namespace DonationAPP.WebAPI.Controllers.Instituicoes.Relacionados.Doacoes.Coman
                 TipoDeDoacao_Id = dadosDeSaida.TipoDeDoacao_Id,
                 TipoDeDoacao_Nome = dadosDeSaida.TipoDeDoacao_Nome,
                 Id = dadosDeSaida.Id,
+                Descricao = dadosDeSaida.Descricao,
                 Quantidade = dadosDeSaida.Quantidade
             };
 

@@ -16,6 +16,7 @@ namespace DonationAPP.WebAPI.Controllers.Instituicoes.Relacionados.Doacoes.Consu
                     Id = item.Id,
                     TipoDeDoacao_Id = item.TipoDeDoacao_Id,
                     TipoDeDoacao_Nome = item.TipoDeDoacao_Nome,
+                    Descricao = item.Descricao,
                     Quantidade = item.Quantidade,
                     Data = item.Data,
                 }).ToArray();

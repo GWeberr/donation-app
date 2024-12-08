@@ -30,9 +30,10 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes
             Instituicao instituicao,
             TipoDeDoacao tipoDeDoacao,
             Guid id,
+            string descricao,
             decimal quantidade)
         {
-            return new InstituicaoDoacao(instituicao.Id, tipoDeDoacao.Id, tipoDeDoacao.Nome, id, quantidade);
+            return new InstituicaoDoacao(instituicao.Id, tipoDeDoacao.Id, tipoDeDoacao.Nome, id, descricao, quantidade);
         }
     }
 }

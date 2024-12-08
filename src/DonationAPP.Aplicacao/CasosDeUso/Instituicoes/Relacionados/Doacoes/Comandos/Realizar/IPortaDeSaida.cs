@@ -4,6 +4,7 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Relacionados.Doacoes.Com
 {
     public interface IPortaDeSaida :
         IPortaDeSaidaSucesso<DadosDeSaida>,
+        IPortaDeSaidaRegraInvalida,
         IPortaDeSaidaErroGenerico
     {
     }

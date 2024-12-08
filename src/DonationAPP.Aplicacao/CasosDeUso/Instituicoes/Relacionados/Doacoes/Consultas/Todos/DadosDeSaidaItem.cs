@@ -6,6 +6,7 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Relacionados.Doacoes.Con
         Guid id,
         Guid tipoDeDoacao_Id,
         string tipoDeDoacao_Nome,
+        string descricao,
         decimal quantidade,
         DateTime data) :
         IDadosDeSaidaItem
@@ -13,6 +14,7 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Relacionados.Doacoes.Con
         public Guid Id { get; } = id;
         public Guid TipoDeDoacao_Id { get; } = tipoDeDoacao_Id;
         public string TipoDeDoacao_Nome { get; } = tipoDeDoacao_Nome;
+        public string Descricao { get; } = descricao;
         public decimal Quantidade { get; } = quantidade;
         public DateTime Data { get; } = data;
     }
