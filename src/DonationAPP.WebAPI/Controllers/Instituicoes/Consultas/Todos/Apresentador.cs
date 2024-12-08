@@ -1,5 +1,5 @@
 ﻿using DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.Todos;
-using DonationAPP.Essentials.WebAPI.Interfaces.Apresentadores;
+using DonationAPP.Essentials.WebAPI.Apresentadores;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DonationAPP.WebAPI.Controllers.Instituicoes.Consultas.Todos
@@ -17,10 +17,7 @@ namespace DonationAPP.WebAPI.Controllers.Instituicoes.Consultas.Todos
                     Nome = item.Nome
                 }).ToArray();
 
-            var respotaDTO = new RespostaDTO()
-            {
-                Itens = itens
-            };
+            var respotaDTO = new RespostaDTO(itens);
 
             ViewModel = new OkObjectResult(respotaDTO)
             {

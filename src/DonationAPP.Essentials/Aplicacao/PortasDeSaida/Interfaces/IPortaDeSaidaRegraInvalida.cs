@@ -1,13 +1,13 @@
-﻿using DonationAPP.Essentials.Aplicacao.Interfaces.Dados;
+﻿using DonationAPP.Essentials.Aplicacao.Dados.Interfaces;
 
-namespace DonationAPP.Essentials.Aplicacao.Interfaces.PortasDeSaida
+namespace DonationAPP.Essentials.Aplicacao.PortasDeSaida.Interfaces
 {
     public interface IPortaDeSaidaSucesso
     {
         void Sucesso();
     }
 
-    public interface IPortaDeSaidaSucesso<TDadosDeSaida> 
+    public interface IPortaDeSaidaSucesso<TDadosDeSaida>
         where TDadosDeSaida : IDadosDeSaida
     {
         void Sucesso(TDadosDeSaida dadosDeSaida);

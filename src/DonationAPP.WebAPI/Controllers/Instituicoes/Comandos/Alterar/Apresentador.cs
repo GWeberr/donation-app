@@ -1,5 +1,5 @@
 ﻿using DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Alterar;
-using DonationAPP.Essentials.WebAPI.Interfaces.Apresentadores;
+using DonationAPP.Essentials.WebAPI.Apresentadores;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DonationAPP.WebAPI.Controllers.Instituicoes.Comandos.Alterar

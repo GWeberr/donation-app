@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace DonationAPP.Essentials.WebAPI.Interfaces.Apresentadores
+namespace DonationAPP.Essentials.WebAPI.Apresentadores
 {
     public abstract class ApresentadorBase
     {

@@ -1,5 +1,5 @@
 ﻿using DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Consultas.PorId;
-using DonationAPP.Essentials.WebAPI.Interfaces.Apresentadores;
+using DonationAPP.Essentials.WebAPI.Apresentadores;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DonationAPP.WebAPI.Controllers.TiposDeDoacao.Consultas.PorId

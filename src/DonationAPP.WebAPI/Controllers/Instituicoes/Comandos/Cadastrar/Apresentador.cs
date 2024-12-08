@@ -1,5 +1,5 @@
 ﻿using DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Cadastrar;
-using DonationAPP.Essentials.WebAPI.Interfaces.Apresentadores;
+using DonationAPP.Essentials.WebAPI.Apresentadores;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DonationAPP.WebAPI.Controllers.Instituicoes.Comandos.Cadastrar

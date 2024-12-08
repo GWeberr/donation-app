@@ -1,4 +1,4 @@
-﻿namespace DonationAPP.Essentials.Aplicacao.Interfaces.PortasDeSaida
+﻿namespace DonationAPP.Essentials.Aplicacao.PortasDeSaida.Interfaces
 {
     public interface IPortaDeSaidaRegraInvalida
     {

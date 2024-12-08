@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace DonationAPP.Essentials.Aplicacao.Interfaces.Dados
+namespace DonationAPP.Essentials.Aplicacao.Dados.Interfaces
 {
     public class DadosDeSaidaListaBase<TItens> :
         IDadosDeSaida

@@ -1,4 +1,4 @@
-﻿using DonationAPP.Essentials.Aplicacao.Interfaces.Dados;
+﻿using DonationAPP.Essentials.Aplicacao.Dados.Interfaces;
 
 namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.Todos
 {
