@@ -1,16 +1,16 @@
-﻿using DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Consultas.Todos;
+﻿using DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.Todos;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DonationAPP.WebAPI.Controllers.TiposDeDoacao.Consultas.Todos
+namespace DonationAPP.WebAPI.Controllers.Instituicoes.Consultas.Todos
 {
     [ApiController]
     [Route("[controller]/")]
-    public class TiposDeDoacaoController : ControllerBase
+    public class InstituicoesController : ControllerBase
     {
         private readonly CasoDeUso _casoDeUso;
         private readonly Apresentador _apresentador;
 
-        public TiposDeDoacaoController(
+        public InstituicoesController(
             CasoDeUso casoDeUso, 
             Apresentador apresentador)
         {
@@ -19,7 +19,7 @@ namespace DonationAPP.WebAPI.Controllers.TiposDeDoacao.Consultas.Todos
         }
 
         /// <summary>
-        /// Obtém todos os tipos de doação cadastrados.
+        /// Obtém todas as instituições cadastradas.
         /// </summary>
         /// <param name="tokenDeCancelamento"></param>
         /// <response code="201">Sucesso.</response>

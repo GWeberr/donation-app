@@ -1,25 +1,27 @@
 ﻿using DonationAPP.Aplicacao.Servicos;
-using DonationAPP.Dominio.Modelos.TiposDeDoacao;
-using DonationAPP.Dominio.Modelos.TiposDeDoacao.Entidades;
+using DonationAPP.Dominio.Modelos.Instituicoes;
+using DonationAPP.Dominio.Modelos.Instituicoes.Entidades;
 
-namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Consultas.Todos
+namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.Todos
 {
     public sealed class CasoDeUso(
-        TipoDeDoacaoServico tipoDeDoacaoServico,
+        InstituicaoServico instituicaoServico,
+        IUnidadeDeTrabalho unidadeDeTrabalho, 
         IPortaDeSaida portaDeSaida)
     {
-        private readonly TipoDeDoacaoServico _tipoDeDoacaoServico = tipoDeDoacaoServico;
+        private readonly InstituicaoServico _instituicaoServico = instituicaoServico;
+        private readonly IUnidadeDeTrabalho _unidadeDeTrabalho = unidadeDeTrabalho;
         private readonly IPortaDeSaida _portaDeSaida = portaDeSaida;
 
         public async Task ExecutarAsync(CancellationToken tokenDeCancelamento)
         {
             try
             {
-                var tiposDeDoacao = await _tipoDeDoacaoServico
+                var instituicoes = await _instituicaoServico
                     .ObterTodosAsync()
                     .ConfigureAwait(false);
 
-                var dadosDeSaida = ConstruirDadosDeSaida(tiposDeDoacao!);
+                var dadosDeSaida = ConstruirDadosDeSaida(instituicoes!);
                 _portaDeSaida.Sucesso(dadosDeSaida);
             }
             catch (Exception ex)
@@ -28,10 +30,10 @@ namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Consultas.Todos
             }
         }
 
-        private static DadosDeSaida ConstruirDadosDeSaida(IEnumerable<TipoDeDoacao> tiposDeDoacao)
+        private static DadosDeSaida ConstruirDadosDeSaida(IEnumerable<Instituicao> instituicoes)
         {
             var dadosDeSaida = new DadosDeSaida(
-                tiposDeDoacao.Select(tipoDeDoacao =>
+                instituicoes.Select(tipoDeDoacao =>
                     new DadosDeSaidaItem(
                         tipoDeDoacao.Id,
                         tipoDeDoacao.Nome))

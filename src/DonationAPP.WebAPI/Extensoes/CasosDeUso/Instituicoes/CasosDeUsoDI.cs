@@ -8,6 +8,9 @@
             Comandos.Remover.CasoDeUsoDI.Add(ref services);
 
             Consultas.PorId.CasoDeUsoDI.Add(ref services);
+            Consultas.Todos.CasoDeUsoDI.Add(ref services);
+
+            Relacionados.Doacoes.Comandos.Realizar.CasoDeUsoDI.Add(ref services);
         }
     }
 }

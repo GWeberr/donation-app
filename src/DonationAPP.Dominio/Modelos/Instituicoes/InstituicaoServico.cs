@@ -20,6 +20,15 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes
             return instituicao;
         }
 
+        public async Task<IEnumerable<Instituicao>?> ObterTodosAsync()
+        {
+            var instituicoes = await _repositorio
+                .ObterTodosAsync()
+                .ConfigureAwait(false);
+
+            return instituicoes;
+        }
+
         public async Task CarregarDoacoes(Instituicao instituicao)
         {
             var doacoes = await _repositorio
