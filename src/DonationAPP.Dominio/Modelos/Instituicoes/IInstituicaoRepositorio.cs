@@ -7,5 +7,6 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes
         Task<Instituicao?> ObterAsync(Guid id);
         Task<IEnumerable<Instituicao>?> ObterTodosAsync();
         Task<List<InstituicaoDoacao>?> CarregarDoacoesAsync(Guid instituicaoId);
+        Task<InstituicaoEndereco?> CarregarEnderecoAsync(Guid instituicaoId);
     }
 }

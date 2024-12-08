@@ -27,6 +27,14 @@
             Endereco = endereco;
         }
 
+        internal void Carregar(InstituicaoEndereco endereco)
+        {
+            if (Endereco is not null)
+                throw new ArgumentException("Endereço já carregado para esta instituição");
+
+            Endereco = endereco;
+        }
+
         internal void Carregar(List<InstituicaoDoacao> doacoes)
         {
             if (_doacoes is not null)
@@ -47,6 +55,16 @@
             DoacoesRecebidas++;
 
             _doacoes.Add(doacaoNova);
+        }
+
+        public void AlterarNome(string nome)
+        {
+            Nome = nome;
+        }
+
+        public void AlterarCNPJ(string cnpj)
+        {
+            CNPJ = cnpj;
         }
     }
 }

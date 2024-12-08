@@ -37,5 +37,14 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes
 
             instituicao.Carregar(doacoes!);
         }
+
+        public async Task CarregarEndereco(Instituicao instituicao)
+        {
+            var endereco = await _repositorio
+                .CarregarEnderecoAsync(instituicao.Id)
+                .ConfigureAwait(false);
+
+            instituicao.Carregar(endereco!);
+        }
     }
 }

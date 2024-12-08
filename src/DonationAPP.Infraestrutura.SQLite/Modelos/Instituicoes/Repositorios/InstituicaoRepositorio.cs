@@ -40,5 +40,16 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Repositorios
 
             return doacoes;
         }
+
+        public async Task<InstituicaoEndereco?> CarregarEnderecoAsync(Guid instituicaoId)
+        {
+            var endereco = await _dbContexto
+                .Set<InstituicaoEndereco>()
+                .Where(entidade => entidade.InstituicaoId == instituicaoId)
+                .FirstOrDefaultAsync()
+                .ConfigureAwait(false);
+
+            return endereco;
+        }
     }
 }
