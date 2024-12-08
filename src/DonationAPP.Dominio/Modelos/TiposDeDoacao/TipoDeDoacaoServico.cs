@@ -1,0 +1,21 @@
+﻿namespace DonationAPP.Dominio.Modelos.TiposDeDoacao
+{
+    public sealed class TipoDeDoacaoServico(IInstituicaoRepositorio repositorio)
+    {
+        private readonly IInstituicaoRepositorio _repositorio = repositorio;
+
+        public async Task<Instituicao?> ObterAsync(Guid id)
+        {
+            return await _repositorio.ObterAsync(id);
+        }
+
+        public async Task<Instituicao> ObterValidaAsync(Guid id)
+        {
+            var instituicao = await _repositorio.ObterAsync(id);
+            if (instituicao is null)
+                throw new Exception("Objeto não encontrado");
+
+            return instituicao;
+        }
+    }
+}

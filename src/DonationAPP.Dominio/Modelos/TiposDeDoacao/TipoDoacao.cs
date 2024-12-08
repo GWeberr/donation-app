@@ -1,4 +1,4 @@
-﻿namespace DonationAPP.Dominio.Modelos.TipoDoacoes
+﻿namespace DonationAPP.Dominio.Modelos.TiposDeDoacao
 {
     public sealed class TipoDoacao
     {
