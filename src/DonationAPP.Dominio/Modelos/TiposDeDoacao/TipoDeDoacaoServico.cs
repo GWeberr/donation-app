@@ -13,7 +13,7 @@
         {
             var tipoDeDoacao = await _repositorio.ObterAsync(id);
             if (tipoDeDoacao is null)
-                throw new Exception("Objeto não encontrado");
+                throw new ArgumentException("Objeto não encontrado");
 
             return tipoDeDoacao;
         }
