@@ -12,5 +12,10 @@
             Id = id;
             Nome = nome;
         }
+
+        public void Alterar(string nome)
+        {
+            Nome = nome;
+        }
     }
 }

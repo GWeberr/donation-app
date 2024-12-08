@@ -1,10 +1,14 @@
 ﻿using DonationAPP.Aplicacao.Servicos;
 using DonationAPP.Dominio.Modelos.TiposDeDoacao;
 
-namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Cadastrar
+namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Aterar
 {
-    public sealed class CasoDeUso(IUnidadeDeTrabalho unidadeDeTrabalho, IPortaDeSaida portaDeSaida)
+    public sealed class CasoDeUso(
+        TipoDeDoacaoServico tipoDeDoacaoServico,
+        IUnidadeDeTrabalho unidadeDeTrabalho, 
+        IPortaDeSaida portaDeSaida)
     {
+        private readonly TipoDeDoacaoServico _tipoDeDoacaoServico = tipoDeDoacaoServico;
         private readonly IUnidadeDeTrabalho _unidadeDeTrabalho = unidadeDeTrabalho;
         private readonly IPortaDeSaida _portaDeSaida = portaDeSaida;
 
@@ -12,12 +16,14 @@ namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Cadastrar
         {
             try
             {
-                var tipoDeDoacao = TipoDoacaoFabrica
-                    .Criar(dadosDeEntrada.Id, dadosDeEntrada.Nome);
-
-                await _unidadeDeTrabalho
-                    .CriarAsync(tipoDeDoacao, tokenDeCancelamento)
+                var tipoDeDoacao = await _tipoDeDoacaoServico
+                    .ObterValidoAsync(dadosDeEntrada.Id)
                     .ConfigureAwait(false);
+
+                tipoDeDoacao.Alterar(dadosDeEntrada.Nome);
+
+                _unidadeDeTrabalho
+                    .Alterar(tipoDeDoacao);
 
                 await _unidadeDeTrabalho
                     .ConfirmarAlteracoesAsync(tokenDeCancelamento)
