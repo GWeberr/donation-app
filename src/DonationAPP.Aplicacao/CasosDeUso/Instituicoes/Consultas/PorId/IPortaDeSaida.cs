@@ -1,9 +1,11 @@
-﻿using DonationAPP.Essentials.Aplicacao.Interfaces.PortasDeSaida;
+﻿using DonationAPP.Essentials.Aplicacao.PortasDeSaida.Interfaces;
 
 namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.PorId
 {
     public interface IPortaDeSaida :
-        IPortaDeSaidaSucesso<DadosDeSaida>
+        IPortaDeSaidaSucesso<DadosDeSaida>,
+        IPortaDeSaidaRegraInvalida,
+        IPortaDeSaidaErroGenerico
     {
     }
 }

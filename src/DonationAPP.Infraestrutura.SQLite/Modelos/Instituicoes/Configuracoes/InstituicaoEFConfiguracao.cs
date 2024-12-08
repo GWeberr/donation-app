@@ -1,4 +1,4 @@
-﻿using DonationAPP.Dominio.Modelos.Instituicoes;
+﻿using DonationAPP.Dominio.Modelos.Instituicoes.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -13,6 +13,7 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Configuracoes
 
             Montarindices(builder);
             MontarColunas(builder);
+            MontarRelacionamentos(builder);
         }
 
         private static void Montarindices(EntityTypeBuilder<Instituicao> builder)
@@ -41,9 +42,21 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.Instituicoes.Configuracoes
                 .Property(propriedade => propriedade.DoacoesRecebidas)
                 .HasColumnName("DOACOESRECEBIDAS")
                 .IsRequired();
+        }
+
+        private static void MontarRelacionamentos(EntityTypeBuilder<Instituicao> builder)
+        {
+            builder
+                .HasOne(entidadePrimaria => entidadePrimaria.Endereco!)
+                .WithOne()
+                .HasForeignKey<InstituicaoEndereco>(entidadeEstrangeira => entidadeEstrangeira.InstituicaoId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder
-                .Ignore(p => p.Doadores);
+                .HasMany(entidadePrimaria => entidadePrimaria.Doacoes!)
+                .WithOne()
+                .HasForeignKey(entidadeEstrangeira => entidadeEstrangeira.InstituicaoId)
+                .OnDelete(DeleteBehavior.Cascade); 
         }
     }
 }

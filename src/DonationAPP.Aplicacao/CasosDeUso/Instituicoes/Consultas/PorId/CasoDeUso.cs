@@ -1,4 +1,5 @@
 ﻿using DonationAPP.Dominio.Modelos.Instituicoes;
+using DonationAPP.Dominio.Modelos.Instituicoes.Entidades;
 
 namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.PorId
 {
@@ -17,22 +18,45 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Consultas.PorId
                     .ObterValidaAsync(dadosDeEntrada.Id)
                     .ConfigureAwait(false);
 
-                var dadosDeSaida = ConstruirDadosDeSaida(instituicao);
+                await _instituicaoServico
+                    .CarregarEndereco(instituicao)
+                    .ConfigureAwait(false);
 
+                var dadosDeSaida = ConstuirDadosDeSaida(instituicao);
                 _portaDeSaida.Sucesso(dadosDeSaida);
             }
-            catch (Exception)
+            catch(ArgumentException regraInvalidaEx)
             {
+                _portaDeSaida.RegraInvalida(regraInvalidaEx.Message);
+            }
+            catch (Exception ex)
+            {
+                _portaDeSaida.ErroGenerico(ex);
             }
         }
 
-        private static DadosDeSaida ConstruirDadosDeSaida(Instituicao instituicao)
+        private DadosDeSaida ConstuirDadosDeSaida(Instituicao instituicao)
         {
+            var endereco = ConstruirDadosDeSaidaEndereco(instituicao.Endereco!);
+
             return new DadosDeSaida(
                 instituicao.Id,
-                instituicao.Nome, 
-                instituicao.CNPJ, 
-                instituicao.DoacoesRecebidas);
+                instituicao.Nome,
+                instituicao.CNPJ,
+                instituicao.DoacoesRecebidas,
+                endereco);
+        }
+
+        private DadosDeSaidaEndereco ConstruirDadosDeSaidaEndereco(InstituicaoEndereco endereco)
+        {
+            return new DadosDeSaidaEndereco(
+                endereco.CEP,
+                endereco.Rua,
+                endereco.Cidade,
+                endereco.Bairro,
+                endereco.UF,
+                endereco.Numero,
+                endereco.Complemento);
         }
     }
 }

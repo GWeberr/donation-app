@@ -1,4 +1,6 @@
-﻿namespace DonationAPP.Dominio.Modelos.Instituicoes
+﻿using DonationAPP.Dominio.Modelos.Instituicoes.Entidades;
+
+namespace DonationAPP.Dominio.Modelos.Instituicoes
 {
     public sealed class InstituicaoServico(IInstituicaoRepositorio repositorio)
     {
@@ -16,6 +18,35 @@
                 throw new Exception("Objeto não encontrado");
 
             return instituicao;
+        }
+
+        public async Task<IEnumerable<Instituicao>?> ObterTodosAsync()
+        {
+            var instituicoes = await _repositorio
+                .ObterTodosAsync()
+                .ConfigureAwait(false);
+
+            return instituicoes;
+        }
+
+        public async Task CarregarDoacoes(Instituicao instituicao)
+        {
+            var doacoes = await _repositorio
+                .CarregarDoacoesAsync(instituicao.Id)
+                .ConfigureAwait(false);
+
+            if (instituicao.Doacoes is null)
+                instituicao.Carregar(doacoes!);
+        }
+
+        public async Task CarregarEndereco(Instituicao instituicao)
+        {
+            var endereco = await _repositorio
+                .CarregarEnderecoAsync(instituicao.Id)
+                .ConfigureAwait(false);
+
+            if (instituicao.Endereco is null)
+                instituicao.Carregar(endereco!);
         }
     }
 }

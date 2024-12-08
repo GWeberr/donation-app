@@ -1,5 +1,5 @@
 ﻿using DonationAPP.Aplicacao.Servicos;
-using DonationAPP.Dominio.Modelos.TipoDoacoes;
+using DonationAPP.Dominio.Modelos.TiposDeDoacao;
 
 namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Cadastrar
 {
@@ -12,7 +12,7 @@ namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Cadastrar
         {
             try
             {
-                var tipoDeDoacao = TipoDoacaoFabrica
+                var tipoDeDoacao = TipoDeDoacaoFabrica
                     .Criar(dadosDeEntrada.Id, dadosDeEntrada.Nome);
 
                 await _unidadeDeTrabalho
@@ -26,8 +26,9 @@ namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Cadastrar
                 var dadosDeSaida = new DadosDeSaida(tipoDeDoacao.Id, tipoDeDoacao.Nome);
                 _portaDeSaida.Sucesso(dadosDeSaida);
             }
-            catch
+            catch(Exception ex)
             {
+                _portaDeSaida.ErroGenerico(ex);
             }
         }
     }

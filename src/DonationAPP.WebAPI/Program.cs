@@ -1,5 +1,6 @@
 using DonationAPP.WebAPI.Extensoes.CasosDeUso;
 using DonationAPP.WebAPI.Extensoes.ServicosDeAplicacao;
+using System.Reflection;
 
 namespace DonationAPP
 {
@@ -15,6 +16,9 @@ namespace DonationAPP
             builder.Services.AddSwaggerGen(options =>
             {
                 options.CustomSchemaIds(type => type.FullName);
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                options.IncludeXmlComments(xmlPath);
             });
 
             builder.Services.AddCasosDeUso();

@@ -1,26 +1,26 @@
-﻿using DonationAPP.Dominio.Modelos.TipoDoacoes;
+﻿using DonationAPP.Dominio.Modelos.TiposDeDoacao.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DonationAPP.Infraestrutura.SQLite.Modelos.TiposDeDoacao.Configuracoes
 {
     public sealed class TipoDeDaocaoEFConfiguracao :
-        IEntityTypeConfiguration<TipoDoacao>
+        IEntityTypeConfiguration<TipoDeDoacao>
     {
-        public void Configure(EntityTypeBuilder<TipoDoacao> builder)
+        public void Configure(EntityTypeBuilder<TipoDeDoacao> builder)
         {
-            builder.ToTable("TIPODOACAO");
+            builder.ToTable("TIPODEDOACAO");
 
             MontarIndices(builder);
             MontarColunas(builder);
         }
 
-        private static void MontarIndices(EntityTypeBuilder<TipoDoacao> builder)
+        private static void MontarIndices(EntityTypeBuilder<TipoDeDoacao> builder)
         {
             builder.HasKey(pk => pk.Id);
         }
 
-        private static void MontarColunas(EntityTypeBuilder<TipoDoacao> builder)
+        private static void MontarColunas(EntityTypeBuilder<TipoDeDoacao> builder)
         {
             builder
                 .Property(propriedade => propriedade.Id)
