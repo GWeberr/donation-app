@@ -1,4 +1,4 @@
-﻿namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Aterar
+﻿namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Alterar
 {
     public sealed class DadosDeEntrada(Guid id, string nome)
     {

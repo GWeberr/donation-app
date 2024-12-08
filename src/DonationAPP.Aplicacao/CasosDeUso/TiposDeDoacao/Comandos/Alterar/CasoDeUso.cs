@@ -1,7 +1,7 @@
 ﻿using DonationAPP.Aplicacao.Servicos;
 using DonationAPP.Dominio.Modelos.TiposDeDoacao;
 
-namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Aterar
+namespace DonationAPP.Aplicacao.CasosDeUso.TiposDeDoacao.Comandos.Alterar
 {
     public sealed class CasoDeUso(
         TipoDeDoacaoServico tipoDeDoacaoServico,
