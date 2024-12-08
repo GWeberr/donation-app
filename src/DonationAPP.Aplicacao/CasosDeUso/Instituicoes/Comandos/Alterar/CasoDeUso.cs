@@ -17,8 +17,7 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Alterar
         {
             try
             {
-                var instituicao = await _instituicaoServico
-                    .ObterValidaAsync(dadosDeEntrada.Id)
+                var instituicao = await ObterInstituicaoValidaAsync(dadosDeEntrada)
                     .ConfigureAwait(false);
 
                 AlterarDadosInstituicao(instituicao, dadosDeEntrada);
@@ -39,6 +38,19 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Alterar
             }
         }
 
+        private async Task<Instituicao> ObterInstituicaoValidaAsync(DadosDeEntrada dadosDeEntrada)
+        {
+            var instituicao = await _instituicaoServico
+                    .ObterValidaAsync(dadosDeEntrada.Id)
+                    .ConfigureAwait(false);
+
+            await _instituicaoServico
+                .CarregarEndereco(instituicao)
+                .ConfigureAwait(false);
+
+            return instituicao;
+        }
+
         private static void AlterarDadosInstituicao(Instituicao instituicao, DadosDeEntrada dadosDeEntrada)
         {
             instituicao.AlterarNome(dadosDeEntrada.Nome);
@@ -57,7 +69,7 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Alterar
             instituicao.Vincular(endereco);
         }
 
-        private DadosDeSaida ConstuirDadosDeSaida(Instituicao instituicao)
+        private static DadosDeSaida ConstuirDadosDeSaida(Instituicao instituicao)
         {
             var endereco = ConstruirDadosDeSaidaEndereco(instituicao.Endereco!);
 
@@ -68,7 +80,7 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Alterar
                 endereco);
         }
 
-        private DadosDeSaidaEndereco ConstruirDadosDeSaidaEndereco(InstituicaoEndereco endereco)
+        private static DadosDeSaidaEndereco ConstruirDadosDeSaidaEndereco(InstituicaoEndereco endereco)
         {
             return new DadosDeSaidaEndereco(
                 endereco.CEP,

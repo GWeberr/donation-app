@@ -6,8 +6,8 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes
     public static class InstituicaoFabrica
     {
         public static Instituicao Criar(
-            Guid id, 
-            string nome, 
+            Guid id,
+            string nome,
             string cnpj)
         {
             return new Instituicao(id, nome, cnpj);
@@ -15,15 +15,15 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes
 
         public static InstituicaoEndereco CriarEndereco(
             Instituicao instituicao,
-            string cep, 
-            string rua, 
-            string cidade, 
-            string bairro, 
-            string uf, 
-            int? numero, 
+            string cep,
+            string rua,
+            string bairro,
+            string cidade,
+            string uf,
+            int? numero,
             string? complemento)
         {
-            return new InstituicaoEndereco(instituicao.Id, cep, rua, cidade, bairro, uf, numero, complemento);
+            return new InstituicaoEndereco(instituicao.Id, cep, rua, bairro, cidade, uf, numero, complemento);
         }
 
         public static InstituicaoDoacao CriarDoacao(

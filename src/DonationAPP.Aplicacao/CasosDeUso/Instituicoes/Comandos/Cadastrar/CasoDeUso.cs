@@ -25,8 +25,8 @@ namespace DonationAPP.Aplicacao.CasosDeUso.Instituicoes.Comandos.Cadastrar
                     instituicao,
                     dadosDeEntrada.Endereco.CEP,
                     dadosDeEntrada.Endereco.Rua,
-                    dadosDeEntrada.Endereco.Cidade,
                     dadosDeEntrada.Endereco.Bairro,
+                    dadosDeEntrada.Endereco.Cidade,
                     dadosDeEntrada.Endereco.UF,
                     dadosDeEntrada.Endereco.Numero,
                     dadosDeEntrada.Endereco.Complemento);

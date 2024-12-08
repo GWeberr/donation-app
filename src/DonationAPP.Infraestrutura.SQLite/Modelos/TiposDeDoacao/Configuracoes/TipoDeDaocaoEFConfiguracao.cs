@@ -9,7 +9,7 @@ namespace DonationAPP.Infraestrutura.SQLite.Modelos.TiposDeDoacao.Configuracoes
     {
         public void Configure(EntityTypeBuilder<TipoDeDoacao> builder)
         {
-            builder.ToTable("TIPODOACAO");
+            builder.ToTable("TIPODEDOACAO");
 
             MontarIndices(builder);
             MontarColunas(builder);

@@ -35,7 +35,8 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes
                 .CarregarDoacoesAsync(instituicao.Id)
                 .ConfigureAwait(false);
 
-            instituicao.Carregar(doacoes!);
+            if (instituicao.Doacoes is null)
+                instituicao.Carregar(doacoes!);
         }
 
         public async Task CarregarEndereco(Instituicao instituicao)
@@ -44,7 +45,8 @@ namespace DonationAPP.Dominio.Modelos.Instituicoes
                 .CarregarEnderecoAsync(instituicao.Id)
                 .ConfigureAwait(false);
 
-            instituicao.Carregar(endereco!);
+            if (instituicao.Endereco is null)
+                instituicao.Carregar(endereco!);
         }
     }
 }
